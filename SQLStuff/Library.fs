@@ -20,7 +20,7 @@ let useOptTypes = true
 type sql = SqlDataProvider<
             dbVendor,
             connString,
-            //ResolutionPath = resPath,
+            ResolutionPath = "libs",
             IndividualsAmount = indivAmount,
             UseOptionTypes = useOptTypes>
 
@@ -28,5 +28,3 @@ let ctx = sql.GetDataContext()
 
 let getIndividuals _ = 
     ctx.Rfam.FamilyLong.Individuals
-    //|> Seq.map (fun e -> e.ColumnValues |> Seq.toList)
-    //|> Seq.toList
